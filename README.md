@@ -26,7 +26,8 @@ This app is intended to fulfill the requirements set out in the description of l
 ## Links and Resources
 
 submission PR
-Any Links you used as reference
+
+[Math.random]("https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random")
 
 ## Reflections and Comments
 
