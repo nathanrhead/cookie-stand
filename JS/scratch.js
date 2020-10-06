@@ -72,56 +72,33 @@ loopCalculator(lima);
 //consider creatting an array for the city names.
 //nested loop: outer loop through each city; inner through cookie sales for each location
 
-var cityArray = [seattle, tokyo, dubai, paris, lima];
+var cityArray = [seattle.name, tokyo.name, dubai.name, paris.name, lima.name];
+var cookieSales = [seattle.cookieSalesPerHour, tokyo.cookieSalesPerHour, dubai.cookieSalesPerHour, paris.cookieSalesPerHour, lima.cookieSalesPerHour];
 
-var cookieSales = [seattle, tokyo, dubai, paris, lima];
-
-
-
-
-for (var i = 0; i < cityArray.length; i++) {
-  var cityName = cityArray[i].name;
-  console.log(cityName);
-
-  var cityHeader = document.getElementById(cityName);
-  var thElement = document.createElement('th');
-  thElement.textContent = cityName;
-  cityHeader.appendChild(thElement);
-  //   console.log(thElement, cityHeader);
-
-  var runningCount = 0;
 
   for (var j = 0; j < 14; j++) {
     var hour = j + 1;
-    var hourlyCookieSales = cookieSales[i].cookieSalesPerHour;
-    // console.log(hourlyCookieSales);
-
-    var cookieSalesPh = document.getElementById(cityArray[i].name);
-    var tdElement = document.createElement('td');
-    tdElement.textContent = `${hour}: ${hourlyCookieSales[j]}`;
-    cookieSalesPh.appendChild(tdElement);
-
-    runningCount = runningCount + hourlyCookieSales[j];
-
+    var hourlyCookieSales = cookieSales[j];
   }
-//   var totalDailySales = document.getElementById(cityArray[i].name);
-  var tdTotalElement = document.createElement('td');
-  tdTotalElement.textContent = `Daily total = ${runningCount}`;
-  cookieSalesPh.appendChild(tdTotalElement);
+
+
+function city(object) {
+    for (var i = 0; i < cityArray.length; i++) {
+        var cityName = cityArray[i];
+      
+  
+  var cityHeader = document.getElementById(object.name);
+  var thElement = document.createElement('th');
+  thElement.textContent = cityName[i];
+  cityHeader.appendChild(thElement);
+}
 }
 
 
-// function sumOfDailyCookieSales(dynamicArray) { 
-//     var sum = 1;
-//       for (var i = 0; i < dynamicArray.length; i++) {
-//           totalSum = sum(totalProduct, dynamicArray[i])[0]; // 1: 1 * 1 = 1; 2: 1 * 2 = 2; 3: 2 * 3 = 6; 4: 6 * 4 = 24; 5: 24 * 5 = 120;
-//       }
-//     }  
-
-
+city(seattle);
 
 
 // var tokyoCityHeader = document.getElementById('tokyo');
 // var headerElement2 = document.createElement('header');
 // headerElement2.textContent = tokyo.name;
-// tokyoCityHeader.appendChild(headerElement2)
+// tokyoCityHeader.appendChild(headerElement2);
