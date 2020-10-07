@@ -10,6 +10,7 @@ var parentElementTbody = document.getElementById('cityRow');
 var parentElementTfoot = document.getElementById('');
 // The parent element for the footer (totals for all stores per hour)
 
+
 function City(name, minimumCustomersPerHour, maximumCustomersPerHour, averageCookiesPerCustomer, totalCookiesForTheDay) {
   this.name = name;
   this.minimumCustomersPerHour = minimumCustomersPerHour;
@@ -53,9 +54,7 @@ City.prototype.renderRows = function() {
     tdChildData.textContent = this.cookiesSoldPerHour[j];
     console.log(this.cookiesSoldPerHour);
     trChild.appendChild(tdChildData);
-
   }
-  parentElementTbody.appendChild(trChild);
 };
 
 var seattle = new City('Seattle', 23, 65, 6.3, 0);
