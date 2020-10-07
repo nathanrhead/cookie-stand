@@ -73,9 +73,11 @@ function renderHeaderHours() {
   }
 }
 
-// function renderFooterTotals() {
-//   var trChild = 
-// }
+function renderFooterTotals() {
+  var trChild = document.createElement('tr');
+  var tdChildFoot = document.createElement('td');
+  tdChildFoot.textContent = this.totalCookiesForTheDay
+};
 
 renderHeaderHours();
 
@@ -90,7 +92,7 @@ lima.renderRows();
 
 
 
-console.log(seattle, tokyo, dubai, paris, lima);
+// console.log(seattle, tokyo, dubai, paris, lima);
 
 
 
