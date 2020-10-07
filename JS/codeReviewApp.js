@@ -4,10 +4,10 @@ var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '
 
 var seattle = {
   name: 'seattle',
-  minimumCustomersPerHour: 23,
-  maximumCustomersPerHour: 65,
-  averageCookiesPerCustomer: 6.3,
-  totalCookiesForTheDay: 0,
+  minCustomersPerHour: 23,
+  maxCustomersPerHour: 65,
+  avgCookiesPerCustomer: 6.3,
+  totalDailyCookieSales: 0,
   // a random number between my minimum and my maximum
   customersEachHour: [],
   // in order to get a cookies sold each hour array, we are going to need to loop over a customers each hour array and multiply that by the average cookies that they buy
@@ -18,7 +18,7 @@ var seattle = {
     // generate the customersEachHour array
     // get a random number somewhere between the min and max and put that random number into the customersEachHour array for each hour
     for(var i=0; i<hours.length; i++){
-      var randomNumber = Math.floor(Math.random() * (this.maximumCustomersPerHour - this.minimumCustomersPerHour + 1) + this.minimumCustomersPerHour);
+      var randomNumber = Math.floor(Math.random() * (this.maxCustomersPerHour - this.minCustomersPerHour + 1) + this.minCustomersPerHour);
   
       this.customersEachHour.push(randomNumber);
     }
@@ -31,9 +31,9 @@ var seattle = {
     // put that number in the cookiesSoldEachHour array
 
     for(var i=0; i<hours.length; i++){
-      var cookiesSoldThisHour = Math.ceil(this.customersEachHour[i] * this.averageCookiesPerCustomer);
+      var cookiesSoldThisHour = Math.ceil(this.customersEachHour[i] * this.avgCookiesPerCustomer);
 
-      this.totalCookiesForTheDay += cookiesSoldThisHour;
+      this.totalDailyCookieSales += cookiesSoldThisHour;
 
       this.cookiesSoldEachHour.push(cookiesSoldThisHour);
     }
