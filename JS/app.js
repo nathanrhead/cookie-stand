@@ -35,9 +35,8 @@ City.prototype.cookiesSoldEachHour = function() {
   this.generateCustomersPerHour();
   for(var i=0; i<hours.length - 2; i++){
     var cookiesSoldThisHour = Math.ceil(this.customersPerHour[i] * this.averageCookiesPerCustomer);
-    this.totalCookiesForTheDay += cookiesSoldThisHour;
+    this.totalCookiesForTheDay += cookiesSoldThisHour; // Tallies the cookies throughout the day
     this.cookiesSoldPerHour.push(cookiesSoldThisHour);
-    console.log(this.cookiesSoldPerHour);
   }
 };
 
@@ -57,6 +56,7 @@ City.prototype.renderRows = function() {
   }
 };
 
+// These are called object instances
 var seattle = new City('Seattle', 23, 65, 6.3, 0);
 var tokyo = new City('Tokyo', 3, 24, 1.2, 0);
 var dubai = new City('Dubai', 11, 38, 3.7, 0);
