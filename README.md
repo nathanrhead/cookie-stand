@@ -27,7 +27,7 @@ This app is intended to fulfill the requirements set out in the description of l
 
 Much thanks to Simon Panek for looking through lots of my code and fixing both the small and the big mistakes.
 
-Same to the following Code Fellows TAs: Brai, Alex, Merry, and Chance.
+Same to the following Code Fellows TAs: Brai, Alex, Merry, Bade, Skyler, and Chance.
 
 ## Links and Resources
 
