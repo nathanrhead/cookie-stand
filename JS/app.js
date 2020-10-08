@@ -17,6 +17,44 @@ var parentElementTbody = document.getElementById('cityRow');
 var parentElementTfoot = document.getElementById('hourlyTotals');
 // The parent element for the footer (totals for all stores per hour)
 
+
+
+// EVENT LISTENER
+// My global variable and array for use in the event listener: to write new store locations to the DOM.
+var formElement = document.getElementById('new-city-form');
+var newStoreLocation = [];
+
+// This is a callback function
+function handleSubmit(event){
+// This tells the browser not to erase my data
+  event.preventDefault();
+
+  // collect the information from the form
+  var storeName = event.target.newstorelocation.value;
+  var minCookies = event.target.dailyMin.value;
+  var maxCookies = event.target.dailyMax.value;
+  var avgCookies = event.target.AvgCookies.value;
+
+  // This runs the gathered inputs through a constructor function
+  new Newcity(storeName, minCookies, maxCookies, avgCookies);
+  // I need to build a constructor function
+}
+
+function Newcity(storeName, minCookies, maxCookies, avgCookies) {
+  this.storeName = storeName;
+  this.minCookies = minCookies;
+  this.maxCookies = maxCookies;
+  this.avgCookies = avgCookies;
+
+  newStoreLocation.push(this);
+}
+
+// This establishes an event listener on the form to listen for the submissions
+formElement.addEventListener('submit', handleSubmit);
+
+
+
+
 // This is the constructor function that poplulates the object instances for each location.
 function City(name, minimumCustomersPerHour, maximumCustomersPerHour, averageCookiesPerCustomer) {
   this.name = name;

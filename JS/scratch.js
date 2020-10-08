@@ -1,6 +1,6 @@
 'use strict';
 
-// Goal: make it so that I can create new people instanes from a form
+// Goal: add a new store location from a form
 
 var formElement = document.getElementById('form');
 var peopleArray = [];
