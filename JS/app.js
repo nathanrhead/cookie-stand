@@ -1,14 +1,15 @@
 'use strict';
 
-
-
 var hours = ['Store Locations', '6:00 a.m.', '7:00 a.m.', '8:00 a.m.', '9:00 a.m.', '10:00 a.m.', '11:00 a.m.', '12:00 p.m.', '1:00 p.m.', '2:00 p.m.', '3:00 p.m.', '4:00 p.m.', '5:00 p.m.', '6:00 p.m.', '7:00 p.m.', 'Grand Total'];
 
 var storeLocations = [];
 console.log(storeLocations);
 
-// var cookiesSoldPerHourGlobalAray = [];
-// console.log(cookiesSoldPerHourGlobalAray);
+var dailyTotalAllLocations = [];
+console.log(dailyTotalAllLocations);
+
+var dailyGrandTotalAllCities = 0;
+
 
 var parentElementThead = document.getElementById('hours');
 // The parent element for the header (each hour)
@@ -30,7 +31,7 @@ function City(name, minimumCustomersPerHour, maximumCustomersPerHour, averageCoo
   this.cookiesSoldPerHour = [];
 
   storeLocations.push(this);
-  // cookiesSoldPerHourGlobalAray.push(this.cookiesSoldPerHour);
+  dailyTotalAllLocations.push(this.totalCookiesForTheDay);
 }
 
 City.prototype.generateCustomersPerHour = function(){
@@ -51,6 +52,8 @@ City.prototype.cookiesSoldEachHour = function() {
 
     this.cookiesSoldPerHour.push(cookiesSoldThisHour);
   }
+  dailyGrandTotalAllCities += this.totalCookiesForTheDay;
+  console.log(dailyGrandTotalAllCities);
 };
 
 City.prototype.renderRows = function() {
@@ -65,12 +68,13 @@ City.prototype.renderRows = function() {
     var tdChildData = document.createElement('td');
     tdChildData.textContent = this.cookiesSoldPerHour[j];
     trChild.appendChild(tdChildData);
-
-    // var tdChildCityTotal = document.createElement('td');
-    // tdChildCityTotal.textContent = dailyTotalPerCity[j];
-    // trChild.appendChild(tdChildCityTotal);
   }
+  // This writes the total cookies to the DOM in the column "Grand Total"
+  var tdChildCityTotal = document.createElement('td');
+  tdChildCityTotal.textContent = this.totalCookiesForTheDay;
+  trChild.appendChild(tdChildCityTotal);
 };
+
 
 new City('Seattle', 23, 65, 6.3);
 new City('Tokyo', 3, 24, 1.2);
@@ -78,6 +82,7 @@ new City('Dubai', 11, 38, 3.7);
 new City('Paris', 20, 38, 2.3);
 new City('Lima', 2, 16, 4.6);
 
+// This function writes the total cookies sold per hour, per location.
 function renderHeaderHours() {
   var trChild = document.createElement('tr');
   for (var i = 0; i < hours.length; i++) {
@@ -105,10 +110,16 @@ function renderFooterTotals() {
     }
     trChild.appendChild(tdFooterTotal);
   }
+  var tdGrandTotal = document.createElement('td');
+  tdGrandTotal.textContent = dailyGrandTotalAllCities;
+  trChild.appendChild(tdGrandTotal);
 }
 
 renderHeaderHours();
+
 for (var i = 0; i < storeLocations.length; i++) {
   storeLocations[i].renderRows();
+  // storeLocations[i].renderCityTotals();
 }
+
 renderFooterTotals();
