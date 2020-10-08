@@ -23,6 +23,12 @@ This app is intended to fulfill the requirements set out in the description of l
 
 ## Author: Nathan Cox/seattle-201d68
 
+## Collaborators
+
+Much thanks to Simon Panek for looking through lots of my code and fixing both the small and the big mistakes.
+
+Same to the following Code Fellows TAs: Brai, Alex, Merry, and Chance.
+
 ## Links and Resources
 
 submission PR

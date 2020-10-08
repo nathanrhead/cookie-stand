@@ -48,8 +48,8 @@ City.prototype.cookiesSoldEachHour = function() {
   this.generateCustomersPerHour();
   for(var i=0; i<hours.length - 2; i++){
     var cookiesSoldThisHour = Math.ceil(this.customersPerHour[i] * this.averageCookiesPerCustomer);
-    this.totalCookiesForTheDay += cookiesSoldThisHour;
 
+    this.totalCookiesForTheDay += cookiesSoldThisHour; // Tallies the cookies throughout the day
     this.cookiesSoldPerHour.push(cookiesSoldThisHour);
   }
   dailyGrandTotalAllCities += this.totalCookiesForTheDay;
@@ -74,7 +74,6 @@ City.prototype.renderRows = function() {
   tdChildCityTotal.textContent = this.totalCookiesForTheDay;
   trChild.appendChild(tdChildCityTotal);
 };
-
 
 new City('Seattle', 23, 65, 6.3);
 new City('Tokyo', 3, 24, 1.2);
