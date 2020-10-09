@@ -99,13 +99,29 @@ input[id="avgCookies"] {
   padding: 0 65px 0 0 ;
 }
 
+/* This is the submit label */
+label[for="submit"] {
+  float: left;
+  position: relative;
+  left: 825px;
+  bottom: 58px;
+}
+/* And this is the submit button */
+input[id="submitbutton"] {
+  float: left;
+  position: relative;
+  left: 780px;
+  bottom: 40px;
+  padding: 0 65px 0 0 ;
+}
+
 
 th {
   border: 2px solid rgb(247, 109, 4);
   padding: 10px;
   width: auto;
   position: relative;
-  left: 50px;
+  left: -117px;
   right: 50px; 
   font-weight: bold;
 }
@@ -114,7 +130,7 @@ td {
   border: 2px solid black;
   padding: 10px;
   position: relative;
-  left: 50px;
+  left: -117px;
   right: 50px;
 }
 
