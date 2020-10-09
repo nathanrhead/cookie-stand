@@ -9,7 +9,7 @@ var peopleArray = [];
 function handleSubmit(event){
   // tell the browser not to get rid of my data
   event.preventDefault();
-  
+
   // collect the information from the form
   // console.log('this is my event.target.free.value', event.target.free.value);
   var personName = event.target.username.value;
@@ -28,7 +28,7 @@ function Person(name, story){
 // name
 // story
 // free time
-  // push object instances into an array
+// push object instances into an array
 
 // set up event listener on the form listening for a submit
 formElement.addEventListener('submit', handleSubmit);

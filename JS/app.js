@@ -22,36 +22,33 @@ var parentElementTfoot = document.getElementById('hourlyTotals');
 // EVENT LISTENER
 // My global variable and array for use in the event listener: to write new store locations to the DOM.
 var formElement = document.getElementById('new-city-form');
-var newStoreLocation = [];
+// var newStoreLocation = [];
+// console.log(newStoreLocation);
 
-// This is a callback function
+// This is a handler function
 function handleSubmit(event){
-// This tells the browser not to erase my data
+
+  // This tells the browser not to erase my data
   event.preventDefault();
 
-  // collect the information from the form
+  // These variables store the information input by the visitor.
   var storeName = event.target.newstorelocation.value;
-  var minCookies = event.target.dailyMin.value;
-  var maxCookies = event.target.dailyMax.value;
-  var avgCookies = event.target.AvgCookies.value;
+  var minCookies = parseInt(event.target.dailyMin.value);
+  var maxCookies = parseInt(event.target.dailyMax.value);
+  var avgCookies = parseInt(event.target.AvgCookies.value);
 
   // This runs the gathered inputs through a constructor function
-  new Newcity(storeName, minCookies, maxCookies, avgCookies);
-  // I need to build a constructor function
-}
-
-function Newcity(storeName, minCookies, maxCookies, avgCookies) {
-  this.storeName = storeName;
-  this.minCookies = minCookies;
-  this.maxCookies = maxCookies;
-  this.avgCookies = avgCookies;
-
-  newStoreLocation.push(this);
+  var newStore = new City(storeName, minCookies, maxCookies, avgCookies);
+  newStore.cookiesSoldEachHour();
+  // parentElementTbody.innerHTML = '';
+  parentElementTfoot.innerHTML = '';
+  // renderStoreData();
+  newStore.renderRows();
+  renderFooterTotals();
 }
 
 // This establishes an event listener on the form to listen for the submissions
 formElement.addEventListener('submit', handleSubmit);
-
 
 
 
@@ -64,8 +61,8 @@ function City(name, minimumCustomersPerHour, maximumCustomersPerHour, averageCoo
   this.totalCookiesForTheDay = 0;
   this.customersPerHour = [];
   this.cookiesSoldPerHour = [];
-
-  storeLocations.push(this); // This pushes all object instances into an array called storeLocations.
+  // This pushes all object instances into an array called storeLocations.
+  storeLocations.push(this);
 }
 
 // This prototype generates a random number to simulate the number of customers per hour.
@@ -94,7 +91,7 @@ City.prototype.cookiesSoldEachHour = function() {
 
 // This prototype renders all of the rows: City names + then hourly totals + then daily totals and the grand total.
 City.prototype.renderRows = function() {
-  this.cookiesSoldEachHour();
+  // this.cookiesSoldEachHour();
   var trChild = document.createElement('tr');
   var tdChild = document.createElement('td');
   tdChild.textContent = this.name;
@@ -118,6 +115,13 @@ new City('Tokyo', 3, 24, 1.2);
 new City('Dubai', 11, 38, 3.7);
 new City('Paris', 20, 38, 2.3);
 new City('Lima', 2, 16, 4.6);
+
+for (var l = 0; l < storeLocations.length; l++) {
+  storeLocations[l].cookiesSoldEachHour();
+}
+
+// // new City(newStoreLocation); adds the new line with NaNs as soon as the page loads.
+// new City(newStoreLocation);
 
 // This function writes the total cookies sold per hour, per location.
 function renderHeaderHours() {
@@ -158,9 +162,13 @@ function renderFooterTotals() {
 // Executable functions
 renderHeaderHours();
 
-for (var i = 0; i < storeLocations.length; i++) {
-  storeLocations[i].renderRows();
+function renderStoreData() {
+  for (var i = 0; i < storeLocations.length; i++) {
+    storeLocations[i].renderRows();
   // storeLocations[i].renderCityTotals();
+  }
 }
+renderStoreData();
 
 renderFooterTotals();
+
