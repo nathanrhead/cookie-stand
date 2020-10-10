@@ -6,32 +6,32 @@ html {
 }
 
 header h1 {
+  font-family: 'Chilanka', cursive;
   font-size: 24px;
   color: rgb(247, 109, 4);
   text-decoration: underline wavy seagreen;
   padding: 15px 15px 10px 60px;
 }
 
-/* This is the section that is parent to the form. I cannot get it to align with the table. */
 #new-city {
-  position: relative;
-  left: 2px;
-  right: 50px;
-  max-width: 91%;
+display: flex;
+flex-direction: row;
+justify-content: space-around;
 }
 
 /* This is the form element */
 #new-city-form {
   border: 2px solid seagreen;
   padding: 10px 0 0px 0;
-  max-width: 91%;
+  /* max-width: 91%;
   position: relative;
   left: 50px;
-  right: 50px; 
+  right: 50px;  */
   margin: 0px 0px 25px 0px;
 }
 
 legend {
+  font-family: 'Chilanka', cursive;
   font-size: 18px;
   color: seagreen;
   padding: 0 0 10px 10px;
@@ -45,6 +45,7 @@ label {
 
 /* This treats the words "Store Location" as a block-level element, so that the form will drop below it.*/
 label[for="new-store"] {
+  font-family: 'Chilanka', cursive;
   display: block;
 }
 
@@ -55,6 +56,7 @@ input[id="new-store-location"] {
 
 /* This is the daily minimum */
 label[for="daily-minimum"] {
+  font-family: 'Chilanka', cursive;
   float: left;
   position: relative;
   left: 190px;
@@ -70,6 +72,7 @@ input[id="dailymin"] {
 
 /* This is the daily maximum */
 label[for="daily-maximum"] {
+  font-family: 'Chilanka', cursive;
   float: left;
   position: relative;
   left: 126px;
@@ -85,6 +88,7 @@ input[id="dailyMax"] {
 
 /* This is the avg daily per customer */
 label[for="average-cookies"] {
+  font-family: 'Chilanka', cursive;
   float: left;
   position: relative;
   left: 61px;
@@ -94,13 +98,14 @@ label[for="average-cookies"] {
 input[id="avgCookies"] {
   float: left;
   position: relative;
-  left: -140px;
+  left: -165px;
   bottom: 21px;
   padding: 0 65px 0 0 ;
 }
 
 /* This is the submit label */
 label[for="submit"] {
+  font-family: 'Chilanka', cursive;
   float: left;
   position: relative;
   left: 825px;
@@ -115,46 +120,58 @@ input[id="submitbutton"] {
   padding: 0 65px 0 0 ;
 }
 
+thead tbody tfoot {
+  display: flex;
+}
 
 th {
   border: 2px solid rgb(247, 109, 4);
   padding: 10px;
-  width: auto;
+  /* width: auto;
   position: relative;
   left: -117px;
-  right: 50px; 
+  right: 50px;  */
+  color: cornflowerblue;
   font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: beige;
 }
 
 td {
   border: 2px solid black;
   padding: 10px;
-  position: relative;
-  left: -117px;
-  right: 50px;
+  /* position: relative; */
+  /* left: -117px;
+  right: 50px; */
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: lightskyblue;
 }
 
 #hourlyTotals {
   font-weight: bold;
   color: seagreen;
+
+}
+
+#hourlyTotals td {
+  background-color: beige;
+  border: 2px solid rgb(247, 109, 4);
 }
 
 a:link {
-  color: seagreen;
+  color: rgb(247, 109, 4);
   width: 10px;
+  text-decoration: underline wavy seagreen;
+
 }
 
 a:visited {
-  color: seagreen;
+  color:  rgb(247, 109, 4);
+
 }
 
 a:hover {
-  color:  rgb(247, 109, 4);
+  color: seagreen;
+
 }
 
-footer a {
-  font-size: 24px;
-  padding: 10px 0px 0px 60px;
-  display: block;
-  text-decoration: underline wavy rgb(247, 109, 4);
-}

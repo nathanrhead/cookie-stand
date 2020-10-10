@@ -1,112 +1,149 @@
 
-header h1 {
-  font-size: 36px;
-  color: rgb(247, 109, 4);
-  text-decoration: underline wavy seagreen;
-  padding: 15px 15px 10px 60px;
-  margin: auto;
-  width: 50%;
+
+/* body {
+  background-color: beige;
+
+} */
+
+header {
+  display: flex; 
+  flex-direction: column;
 
 }
 
+#header {
+  display: flex; 
+  flex-direction: row;
+}
+
+header h1 {
+  font-family: 'Chilanka', cursive;
+  font-size: 36px;
+  color: rgb(247, 109, 4);
+  text-decoration: underline wavy seagreen;
+  padding: 5% 0 2% 5%;
+  
+}
+
 header h2 {
+  font-family: 'Chilanka', cursive;
   font-size: 24px;
   color: rgb(247, 109, 4);
   padding: 0px 15px 10px 135px;
-  margin: auto;
-  width: 50%;
 
+}
+
+#fish-cookies {
+  align-self: flex-end;
+  padding-left: 25%;
+  max-width: 50%;
+
+  
 }
 
 nav {
   border: 3px solid seagreen;
-  padding: 5px;
-  margin: auto;
-  width: 60%;
-  margin-bottom: 25px;
+  margin: 2%;
+  background-color: beige;
 }
 
 nav a {
   font-size: 24px;
-  padding: 10px 0px 0px 70px;
+  padding: 10px 0px 10px 70px;
   display: block;
   text-decoration: underline wavy rgb(247, 109, 4);
 }
 
 body {
   border: 5px solid  rgb(247, 109, 4);
-  margin: auto;
-  width: 55%;
-  margin-top: 10px;
-
+  margin: 15%;
+  
 }
 
 main {
   border: 3px solid seagreen;
-  margin: 10px 0;
+  margin: 2%;
+
 }
+
+main section {
+display: flex;
+flex-direction: column;
+flex-wrap: wrap; 
+max-height: 500px;
+}
+
 #family {
-  float: left;
-  position: relative;
-  top: 45px;
-  left: 15px;
+  margin-top: 2%;
+  margin-left: 1%;
 }
 
 article p {
   max-width: 300px;
   max-height: 450px;
-  margin: auto;
-  position: relative;
-  top: 15px;
-  left: 30px;
   text-align: justify;
   border: 2px solid seagreen;
   padding: 5px;
+  margin: 2%;
+  background-color: beige;
 }
 
 #shirt {
-  float: right;
-  position: relative;
-  bottom: 250px;
-  right: 20px;
+  align-self: baseline;
+  margin-top: 2%; 
 }
 
-#logo {
-  margin: auto;
-  width: 50%;
-  background-color: red;
+#merch {
+  font-family: 'Chilanka', cursive;
+  font-size: 36px;
+  color: rgb(247, 109, 4);
+  text-decoration: underline wavy seagreen;
+  padding-top: 8%;
 }
 
-#fish-cookies {
-position: relative;
-left: 450px;
-bottom: -30px;
-z-index: 1;
+
+article p {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: cornflowerblue
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-height: 230px;
+
 }
 
 footer img {
-  position: relative;
-  display: block-inline;
+  margin: 2%;
 }
 
 .contactinfo1 {
+  font-family: 'Chilanka', cursive;
   font-size: 24px;
-  position: relative;
-  right: 50px;
-  left: 190px;
-  bottom: 150px;
-  float: right;
   text-decoration: underline wavy rgb(247, 109, 4);
+  margin-left: 2%;
+  margin-bottom: 2%;
 }
 
 .contactinfo2 {
+  font-family: 'Chilanka', cursive;
   font-size: 24px;
-  position: relative;
-  right: -125px;
-  left: 315px;
-  bottom: 100px;
-  float: right;
   text-decoration: underline wavy rgb(247, 109, 4);
+  margin-left: 2%;
+  margin-bottom: 1%;
+}
+
+ul {
+  font-family: 'Chilanka', cursive;
+  font-size: 10px;
+  margin-bottom: 3%;
+}
+
+li {
+  padding: 3%;
+  margin-top: 3%;
 }
 
 
